@@ -1,3 +1,32 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<div class="wrap">
+    <div class="top-menu">
+        <nav class="ink-navigation ink-grid">
+            <ul class="menu horizontal black">
+                <li class="heading">{{#link-to 'index'}}Source.Watch{{/link-to}}</li>
+                <li>{{#link-to 'activity'}}All activity{{/link-to}}</li>
+                <li>{{#link-to 'following.users'}}People{{/link-to}}</li>
+                <li>{{#link-to 'following.repos'}}Projects{{/link-to}}</li>
+                <li>{{#link-to 'you'}}You{{/link-to}}</li>
+            </ul>
+        </nav>
+    </div>
 
-{{outlet}}
+    <div class="ink-grid vertical-space">
+        <h1>heading</h1>
+    </div>
+
+    <div class="push" role="presentation"></div>
+
+    <div class="ink-grid vertical-space">
+      {{outlet}}
+    </div>
+</div>
+
+<footer class="clearfix">
+    <div class="ink-grid">
+        <ul class="unstyled inline half-vertical-space">
+            <li class="active"><a href="#">About</a></li>
+        </ul>
+        <p class="note"></p>
+    </div>
+</footer>

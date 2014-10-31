@@ -1,0 +1,5 @@
+{{#unless session.isAuthenticated}}
+  <div class="alert alert-info">
+    {{#link-to 'login' class="ink-button black"}}Login with Github{{/link-to}}
+  </div>
+{{/unless}}

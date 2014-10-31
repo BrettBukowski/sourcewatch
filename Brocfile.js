@@ -1,6 +1,7 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var pickFiles = require('broccoli-static-compiler');
 
 var app = new EmberApp();
 
@@ -17,4 +18,12 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-module.exports = app.toTree();
+app.import('bower_components/Ink/dist/css/ink-flex.css');
+
+var extraAssets = pickFiles('bower_components/Ink', {
+    srcDir: '/dist/fonts/Roboto',
+    files: ['**/*.woff', '**/*.ttf', '**/*.eot'],
+    destDir: '/fonts/Roboto'
+});
+
+module.exports = app.toTree(extraAssets);

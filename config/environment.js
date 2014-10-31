@@ -10,6 +10,29 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      },
+      // 'torii': {
+      //   sessionServiceName: 'session',
+      //   providers: {
+      //     github: {
+      //       appId: 'c9dd00604e926b24dc9c',
+      //       // authBaseUri: 'https://github.com/login/oauth/authorize',
+      //       // redirectUri: 'http://localhost:4200/callback', // Server-side route
+      //       scope: 'repo'
+      //     }
+      //   }
+      // }
+    },
+    'torii': {
+      sessionServiceName: 'session',
+      providers: {
+        'github-oauth2': {
+          appId: 'c9dd00604e926b24dc9c',
+          apiKey: 'c9dd00604e926b24dc9c',
+          // authBaseUri: 'https://github.com/login/oauth/authorize',
+          // redirectUri: 'http://localhost:4200/callback', // Server-side route
+          scope: 'repo'
+        }
       }
     },
 
