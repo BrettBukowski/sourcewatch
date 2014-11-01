@@ -1,4 +1,4 @@
-# Sourcewatch
+# Sourcewatch [![Build Status](https://travis-ci.org/BrettBukowski/sourcewatch.svg?branch=master)](https://travis-ci.org/BrettBukowski/sourcewatch) [![Code Climate](https://codeclimate.com/github/BrettBukowski/sourcewatch/badges/gpa.svg)](https://codeclimate.com/github/BrettBukowski/sourcewatch)
 
 Ember application to view an activity stream of projects and users you follow.
 
