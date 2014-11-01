@@ -2,7 +2,11 @@
     <div class="top-menu">
         <nav class="ink-navigation ink-grid">
             <ul class="menu horizontal black">
-                <li class="heading">{{#link-to 'index'}}Source.Watch{{/link-to}}</li>
+                <li class="heading">
+                    {{#link-to 'index'}}
+                        Source<span class="sub-logo">.Watch</span>
+                    {{/link-to}}
+                </li>
                 <li>{{#link-to 'activity'}}All activity{{/link-to}}</li>
                 <li>{{#link-to 'following.users'}}People{{/link-to}}</li>
                 <li>{{#link-to 'following.repos'}}Projects{{/link-to}}</li>
@@ -10,16 +14,7 @@
             </ul>
         </nav>
     </div>
-
-    <div class="ink-grid vertical-space">
-        <h1>heading</h1>
-    </div>
-
-    <div class="push" role="presentation"></div>
-
-    <div class="ink-grid vertical-space">
-      {{outlet}}
-    </div>
+    {{outlet}}
 </div>
 
 <footer class="clearfix">

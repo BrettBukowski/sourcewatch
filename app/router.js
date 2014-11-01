@@ -1,13 +1,28 @@
 import Ember from 'ember';
 import config from './config/environment';
 
+Ember.Route.reopen({
+  activate: function() {
+    var cssClass = this.toCssClass();
+
+    if (cssClass !== 'application') {
+      Ember.$('body').addClass(cssClass);
+    }
+  },
+  deactivate: function() {
+    Ember.$('body').removeClass(this.toCssClass());
+  },
+  toCssClass: function() {
+    return this.routeName.replace(/\./g, '-').dasherize();
+  }
+});
+
 var Router = Ember.Router.extend({
   location: config.locationType
 });
 
 Router.map(function() {
   this.route('about');
-  this.route('login');
   this.route('activity');
   this.route('you');
 

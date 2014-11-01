@@ -19,6 +19,11 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 
 app.import('bower_components/Ink/dist/css/ink-flex.css');
+['eot', 'ttf', 'woff', 'svg'].forEach(function (ext) {
+  app.import('bower_components/ionicons/fonts/ionicons.' + ext, {
+    destDir: 'fonts'
+  });
+});
 
 var extraAssets = pickFiles('bower_components/Ink', {
     srcDir: '/dist/fonts/Roboto',

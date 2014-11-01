@@ -1,5 +1,26 @@
-{{#unless session.isAuthenticated}}
-  <div class="alert alert-info">
-    {{#link-to 'login' class="ink-button black"}}Login with Github{{/link-to}}
-  </div>
-{{/unless}}
+<div class="push" role="presentation"></div>
+
+<div class="ink-grid vertical-space">
+    <h1>Keep up-to-date on the projects and people you care about.</h1>
+
+    <p>Stay informed about code changes in repos you've starred or written by people you follow.</p>
+</div>
+
+<div class="push" role="presentation"></div>
+
+<div class="ink-grid vertical-space">
+  {{#if session.isWorking}}
+    Logging in...
+  {{/if}}
+
+  {{#unless session.isAuthenticated}}
+    {{#if error}}
+    <div class="ink-alert basic error" role="alert">{{error}}</div>
+    {{/if}}
+
+    <a href="#" {{action 'logIn'}} class="ink-button black">
+      <i class="ion-social-github ion" role="presentation" aria-hidden="true"></i>
+      Log In with GitHub
+    </a>
+  {{/unless}}
+</div>
