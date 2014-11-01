@@ -1,8 +1,8 @@
 # Sourcewatch
 
-This README outlines the details of collaborating on this Ember application.
+Ember application to view an activity stream of projects and users you follow.
 
-A short introduction of this app could easily go here.
+Work in progress...
 
 ## Prerequisites
 

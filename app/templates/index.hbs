@@ -9,10 +9,6 @@
 <div class="push" role="presentation"></div>
 
 <div class="ink-grid vertical-space">
-  {{#if session.isWorking}}
-    Logging in...
-  {{/if}}
-
   {{#unless session.isAuthenticated}}
     {{#if error}}
     <div class="ink-alert basic error" role="alert">{{error}}</div>
@@ -20,7 +16,11 @@
 
     <a href="#" {{action 'logIn'}} class="ink-button black">
       <i class="ion-social-github ion" role="presentation" aria-hidden="true"></i>
+      {{#if session.isWorking}}
+      Logging in...
+      {{else}}
       Log In with GitHub
+      {{/if}}
     </a>
   {{/unless}}
 </div>

@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import config from './config/environment';
 
+// Add route class name on the body.
 Ember.Route.reopen({
   activate: function() {
     var cssClass = this.toCssClass();
