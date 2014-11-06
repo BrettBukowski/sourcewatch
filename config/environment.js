@@ -27,6 +27,7 @@ module.exports = function(environment) {
       sessionServiceName: 'session',
       providers: {
         'github-oauth2': {
+          redirectUri: 'http://localhost:4200/redirect',
           appId: 'c9dd00604e926b24dc9c',
           apiKey: 'c9dd00604e926b24dc9c',
           // authBaseUri: 'https://github.com/login/oauth/authorize',

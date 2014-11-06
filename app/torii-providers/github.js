@@ -1,7 +1,8 @@
 import ToriiGitHubProvider from 'torii/providers/github-oauth2';
 
 export default ToriiGitHubProvider.extend({
-  // Github doesn't allow the uri to be encoded.
+  // Github doesn't allow the uri to be encoded and torii encodes
+  // everything by default.
   buildUrl: function () {
     var url = this._super();
 
