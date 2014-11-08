@@ -1,7 +1,7 @@
 <div class="wrap">
-    <div class="top-menu">
+    <div id="topbar" class="top-bar">
         <nav class="ink-navigation ink-grid">
-            <ul class="menu horizontal black">
+            <ul class="menu horizontal black push-left medium-push-center small-push-center">
                 <li class="heading">
                     {{#link-to 'index'}}
                         Source<span class="sub-logo">.Watch</span>
@@ -20,6 +20,21 @@
                     <a {{bind-attr href="view.href"}}>You</a>
                 {{/link-to}}
             </ul>
+            {{#if session.isAuthenticated}}
+            <ul class="menu horizontal black push-right hide-small hide-tiny hide-medium">
+                <li>
+                    <a role="button" href="javascript:;">
+                        <img {{bind-attr src="session.currentUser.avatar_url"}} height="28" width="28" alt=""/>
+                        <span>{{session.currentUser.login}}</span>
+                        <i class="ion-chevron-down" role="presentation" aria-hidden="true"></i>
+                        <span class="sr-only">user actions</span>
+                    </a>
+                    <ul class="submenu">
+                        <li>{{#link-to "logout" class="ion-log-out"}}Log out{{/link-to}}</li>
+                    </ul>
+                </li>
+            </ul>
+            {{/if}}
         </nav>
     </div>
     {{outlet}}

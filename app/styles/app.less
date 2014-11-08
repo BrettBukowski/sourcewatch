@@ -7,6 +7,11 @@ html, body {
     min-height: 600px;
     background: #f0f0f0;
 }
+img {
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
 .wrap {
     min-height: 100%;
     height: auto !important;
@@ -39,6 +44,28 @@ footer * {
 
 .sub-logo {
     color: #EEE;
+}
+
+#topbar {
+    background: #1A1A1A;
+
+    &::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+// http://a11yproject.com/posts/how-to-hide-content/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
 }
 
 

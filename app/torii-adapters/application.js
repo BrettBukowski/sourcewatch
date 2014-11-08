@@ -32,7 +32,7 @@ export default Ember.Object.extend({
         stored = JSON.parse(stored);
       } catch (e) {}
 
-      if (stored.id) {
+      if (stored && stored.id) {
         resolve({
           isAuthenticated: true,
           currentUser:     stored

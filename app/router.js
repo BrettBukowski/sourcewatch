@@ -31,6 +31,7 @@ Router.map(function() {
     this.route('repos');
     this.route('users');
   });
+  this.route('logout');
 });
 
 export default Router;
