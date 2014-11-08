@@ -1,1 +1,27 @@
-{{outlet}}
+<div class="ink-grid vertical-space">
+  {{#each}}
+  <div {{bind-attr class=":event type"}}>
+    <div class="column-group">
+      <div class="heading all-90">
+        <span class="user">
+          <a {{bind-attr href="userUrl"}}>
+            <img {{bind-attr src="actor.avatar_url"}} height="28" width="28" />
+            {{actor.login}}
+          </a>
+        </span>
+        <span class="verb">{{verb}}</span>
+        <span>
+          <a {{bind-attr href="repoUrl"}}>{{repo.name}}</a>
+        </span>
+      </div>
+
+      <div class="meta all-10">
+        <time {{bind-attr datetime="created_at"}}>{{relative-date created_at}}</time>
+      </div>
+    </div>
+
+    <div class="body">
+    </div>
+  </div>
+  {{/each}}
+</div>
