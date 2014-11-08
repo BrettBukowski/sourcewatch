@@ -5,7 +5,6 @@ export default Ember.Route.extend({
     this._super(transition);
 
     this.get('session').fetch('github').then(Ember.run.bind(this, function () {
-      transition.abort();
       this.transitionTo('/activity');
     }));
   },
