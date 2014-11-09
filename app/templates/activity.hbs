@@ -11,15 +11,14 @@
         </span>
         {{/unless}}
       </div>
-
-      <div class="meta all-10 small-20 align-right">
-        <time {{bind-attr datetime="created_at"}}>{{relative-date created_at}}</time>
-      </div>
+    </div>
+    <div class="meta">
+      <time {{bind-attr datetime="created_at"}}>{{relative-date created_at}}</time>
     </div>
 
     <div class="body">
       {{#if payload.commits}}
-        <div class="commits">
+        <div class="commits summary">
         {{#each payload.commits}}
           <div class="commit">
             <a {{bind-attr href="commitUrl"}}>
@@ -27,6 +26,11 @@
             </a>
           </div>
         {{/each}}
+        </div>
+      {{/if}}
+      {{#if payload.forkee}}
+        <div class="description summary">
+          {{payload.forkee.description}}
         </div>
       {{/if}}
     </div>

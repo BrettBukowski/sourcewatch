@@ -1,7 +1,9 @@
 <span class="user">
-  {{userUrl}}
   <a {{bind-attr href="userUrl"}}>
-    <img {{bind-attr src="avatar_url"}} height="28" width="28" />
+    <img class="user-avatar" {{bind-attr src="avatar_url"}} height="48" width="48" />
+  </a>
+
+  <a {{bind-attr href="userUrl"}}>
     {{login}}
   </a>
 </span>
