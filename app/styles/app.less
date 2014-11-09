@@ -99,9 +99,26 @@ footer * {
 }
 
 .event {
-    padding: 2em 0;
+    margin-top: 2em;
+
+    &.is-repeated-action {
+        margin-top: 0;
+    }
 
     .meta {
         font-size: smaller;
     }
+}
+
+.commits {
+    background: #DDD;
+    border-radius: 3px;
+    margin: 1em 0 1em 2em;
+    padding: 1em;
+}
+
+img.emoji {
+    width: 24px;
+    height: 24px;
+    vertical-align: bottom;
 }

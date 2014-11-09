@@ -8,6 +8,9 @@ var eventMapping = {
   CreateEvent:  'created'
 };
 
+var lastAction = '';
+var lastActionCache = {};
+
 export default Ember.ObjectController.extend({
   verb: function () {
     return eventMapping[this.get('type')] || this.get('type');
@@ -19,5 +22,22 @@ export default Ember.ObjectController.extend({
 
   userUrl: function () {
     return githubUrl(this.get('actor.url'));
-  }.property('actor.url')
+  }.property('actor.url'),
+
+  commitUrl: function () {
+  }.property('payload.commits.@each.url'),
+
+  isRepeatedAction: function () {
+    var id = this.get('id');
+
+    if (typeof lastActionCache[id] === 'undefined') {
+      var action = this.get('type') + this.get('repo.url');
+
+      lastActionCache[id] = action === lastAction;
+
+      lastAction = action;
+    }
+
+    return lastActionCache[id];
+  }.property('repo.url', 'type')
 });
