@@ -7,7 +7,6 @@ export default Ember.Mixin.create({
     this._super(transition);
 
     if (!this.get('session').get('isAuthenticated')) {
-      transition.abort();
       this.transitionTo('/');
     }
   }

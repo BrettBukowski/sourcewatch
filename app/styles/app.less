@@ -2,6 +2,11 @@
 
 @footer-height: 100px;
 
+@large: 1260px;
+@medium: 960px;
+@small: 640px;
+@tiny: 320px;
+
 html, body {
     height: 100%;
     min-height: 600px;
@@ -98,6 +103,8 @@ footer * {
     }
 }
 
+@sub-indent: 48px + 6px;
+
 .event {
     padding-top: 2em;
     padding-left: 1em;
@@ -156,8 +163,6 @@ footer * {
         }
     }
 
-    @sub-indent: 48px + 6px;
-
     .meta {
         font-size: smaller;
         margin-top: .7em;
@@ -172,12 +177,13 @@ footer * {
       top: 15px;
     }
 
-    .summary {
-        background: #DDD;
-        border-radius: 3px;
-        margin-left: @sub-indent;
-        padding: 1em;
-    }
+}
+
+.summary {
+    background: #DDD;
+    border-radius: 3px;
+    margin-left: @sub-indent;
+    padding: 1em;
 }
 
 .user-avatar {
@@ -191,4 +197,21 @@ img.emoji {
     width: 24px;
     height: 24px;
     vertical-align: bottom;
+}
+
+.user-profile {
+    padding-bottom: 2em;
+    border-bottom: 1px solid #CCC;
+
+    img {
+        @media screen and (max-width: @large) {
+            height: 80px;
+            width: 80px;
+        }
+    }
+    h1 {
+        @media screen and (max-width: @tiny) {
+            font-size: 1.6em;
+        }
+    }
 }

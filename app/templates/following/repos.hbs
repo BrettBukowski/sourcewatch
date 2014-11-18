@@ -1,0 +1,12 @@
+<div class="ink-grid vertical-space">
+  {{#each}}
+  <div class="repo">
+    <img {{bind-attr src="owner.avatar_url"}} height="48" width="48" alt="" />
+    <a {{bind-attr href="html_url"}}>{{highlight-repo full_name}}</a>
+
+    <div class="summary">
+      {{emoji-message description}}
+    </div>
+  </div>
+  {{/each}}
+</div>
