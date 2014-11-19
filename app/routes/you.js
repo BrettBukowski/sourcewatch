@@ -3,6 +3,6 @@ import ProtectedRoute from './protected';
 
 export default ProtectedRoute.extend({
   model: function () {
-    return Ember.$.getJSON(this.get('session').get('currentUser').events_url.replace(/\{.*\}/, ''));
+    return Ember.$.getJSON(UriTemplate.expand(this.get('session').get('currentUser').events_url));
   }
 });

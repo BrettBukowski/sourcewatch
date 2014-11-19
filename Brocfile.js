@@ -26,6 +26,7 @@ app.import('bower_components/Ink/dist/css/ink-flex.css');
 });
 app.import('bower_components/moment/moment.js');
 app.import('bower_components/twemoji/twemoji.js');
+app.import('bower_components/uri-template.js/dist/uri-template.js');
 
 var extraAssets = pickFiles('bower_components/Ink', {
     srcDir: '/dist/fonts/Roboto',
