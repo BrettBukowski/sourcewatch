@@ -1,17 +1,4 @@
-<div class="ink-grid vertical-space user-profile">
-  <div class="column-group">
-    <div class="all-10 medium-20 small-30">
-      <img {{bind-attr src="session.currentUser.avatar_url"}} height="128" width="128" alt="" />
-    </div>
-
-    <div class="all-80 medium-80 small-70">
-      <h1>{{session.currentUser.name}}</h1>
-      <i class="ion-social-github"></i>
-      <a {{bind-attr href="session.currentUser.html_url"}}>{{session.currentUser.login}}</a>
-    </div>
-
-  </div>
-</div>
+{{partial "profile"}}
 
 <div class="ink-grid vertical-space">
   {{#each}}
@@ -27,6 +14,7 @@
         {{/unless}}
       </div>
     </div>
+
     <div class="meta">
       <time {{bind-attr datetime="created_at"}}>{{relative-date created_at}}</time>
     </div>
@@ -34,12 +22,8 @@
     <div class="body">
       {{#if payload.commits}}
         <div class="commits summary">
-        {{#each payload.commits}}
-          <div class="commit">
-            <a {{bind-attr href="commitUrl"}}>
-            {{emoji-message message}}
-            </a>
-          </div>
+        {{#each commit in payload.commits}}
+          {{render "commit" commit}}
         {{/each}}
         </div>
       {{/if}}

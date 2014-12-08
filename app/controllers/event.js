@@ -17,15 +17,8 @@ export default Ember.ObjectController.extend({
   }.property('type'),
 
   repoUrl: function () {
-    return githubUrl(this.get('repo.url'));
+    return githubUrl(this.get('repo.url'), 'repo');
   }.property('repo.url'),
-
-  userUrl: function () {
-    return githubUrl(this.get('actor.url'));
-  }.property('actor.url'),
-
-  commitUrl: function () {
-  }.property('payload.commits.@each.url'),
 
   isRepeatedAction: function () {
     var id = this.get('id');

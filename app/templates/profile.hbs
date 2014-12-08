@@ -1,0 +1,26 @@
+<div class="ink-grid vertical-space user-profile">
+  <div class="column-group">
+    <div class="all-10 medium-20 small-30">
+      <img {{bind-attr src="session.currentUser.avatar_url"}} height="128" width="128" alt="" />
+    </div>
+
+    <div class="all-80 medium-80 small-70">
+      <h1>{{session.currentUser.name}}</h1>
+      <div class="profile-links">
+        <div>
+          <i class="ion-social-github"></i>
+          <a class="bold" {{bind-attr href="session.currentUser.html_url"}}>{{session.currentUser.login}}</a>
+        </div>
+        <ul class="inline bulleted">
+          <li><a href="{{unbound github-url session.currentUser.following_url "user"}}"><span class="bold">{{session.currentUser.public_repos}}</span> public repos</a></li>
+          <li><a href="{{unbound github-url session.currentUser.gists_url "user"}}"><span class="bold">{{session.currentUser.public_gists}}</span> gists</a></li>
+        </ul>
+        <ul class="inline bulleted">
+          <li><a href="{{unbound github-url session.currentUser.followers_url "user"}}"><span class="bold">{{session.currentUser.followers}}</span> followers</a></li>
+          <li><a href="{{unbound github-url session.currentUser.following_url "user"}}"><span class="bold">{{session.currentUser.following}}</span> following</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

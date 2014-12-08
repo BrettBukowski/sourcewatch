@@ -1,0 +1,10 @@
+<div class="ink-grid vertical-space">
+  {{#each}}
+  <div class="user">
+    <a {{bind-attr href="html_url"}}>
+      <img {{bind-attr src="avatar_url"}} height="48" width="48" alt="" />
+      {{login}}
+    </a>
+  </div>
+  {{/each}}
+</div>
