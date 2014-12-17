@@ -2,10 +2,21 @@ import Ember from 'ember';
 import { githubUrl } from '../helpers/github-url';
 
 var eventMapping = {
-  PushEvent:    'pushed to',
-  WatchEvent:   'started watching',
-  ForkEvent:    'forked',
-  CreateEvent:  'created'
+  CommitCommentEvent:               'commented on',
+  CreateEvent:                      'created',
+  DeleteEvent:                      'removed',
+  FollowEvent:                      'followed',
+  ForkEvent:                        'forked',
+  GollumEvent:                      'created a wiki page',
+  IssueCommentEvent:                'commented on issue',
+  IssuesEvent:                      'dealt with an issue',
+  MemberEvent:                      'added',
+  PublicEvent:                      'open sourced',
+  PullRequestEvent:                 'dealt with a pull request',
+  PullRequestReviewCommentEvent:    'commented on pull request',
+  PushEvent:                        'pushed to',
+  ReleaseEvent:                     'published a release',
+  WatchEvent:                       'starred'
 };
 
 var lastAction = '';

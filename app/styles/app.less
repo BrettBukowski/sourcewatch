@@ -168,6 +168,39 @@ footer * {
             border-color: red;
         }
     }
+    &.GollumEvent {
+        &::before {
+            content: @ionicon-var-document-text;
+        }
+    }
+    &.IssueCommentEvent,
+    &.CommitCommentEvent,
+    &.PullRequestReviewCommentEvent {
+        &::before {
+            content: @ionicon-var-chatboxes;
+        }
+    }
+    &.PullRequestEvent,
+    &.ReleaseEvent {
+        &::before {
+            content: @ionicon-var-checkmark;
+        }
+    }
+    &.MemberEvent {
+        &::before {
+            content: @ionicon-var-person-add;
+        }
+    }
+    &.PublicEvent {
+        &::before {
+            content: @ionicon-var-unlocked;
+        }
+    }
+    &.DeleteEvent {
+        &::before {
+            content: @ionicon-var-trash-a;
+        }
+    }
 
     .meta {
         font-size: smaller;
@@ -186,9 +219,10 @@ footer * {
 }
 
 .summary {
-    background: darken(@body-bg-color, 4%);
+    background: darken(@body-bg-color, 3%);
     border-radius: 3px;
     margin-left: @sub-indent;
+    margin-top: .2em;
     padding: 1em;
 }
 
