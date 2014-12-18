@@ -112,20 +112,21 @@ footer * {
 @sub-indent: 48px + 6px;
 
 .event {
-    padding-top: 2em;
-    padding-left: 1em;
     border-left: 3px solid transparent;
+    padding: 2em 0 0 2em;
     position: relative;
 
     &::before {
         .ion();
+        background: #FFF;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        left: -(18em / 14);
+        padding: 8px 6px;
         position: absolute;
         top: -3px;
-        left: -1em;
-        background: #FFF;
-        border-radius: 50%;
-        padding: 6px 8px;
-        border: 2px solid transparent;
+        text-align: center;
+        width: (18em / 14);
     }
 
     &.is-repeated-action {
@@ -156,7 +157,7 @@ footer * {
         border-left-color: yellow;
 
         &::before {
-            content: @ionicon-var-code-working;
+            content: @ionicon-var-star;
             border-color: yellow;
         }
     }
@@ -187,13 +188,26 @@ footer * {
         }
     }
     &.MemberEvent {
+        border-left-color: green;
+
+        .member {
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
         &::before {
             content: @ionicon-var-person-add;
+            border-color: green;
         }
     }
     &.PublicEvent {
+        border-left-color: green;
+
         &::before {
             content: @ionicon-var-unlocked;
+            border-color: green;
         }
     }
     &.DeleteEvent {
@@ -221,6 +235,7 @@ footer * {
 .summary {
     background: darken(@body-bg-color, 3%);
     border-radius: 3px;
+    font-size: smaller;
     margin-left: @sub-indent;
     margin-top: .2em;
     padding: 1em;

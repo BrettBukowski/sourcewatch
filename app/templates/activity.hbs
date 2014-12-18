@@ -1,1 +1,42 @@
-{{outlet}}
+<div class="ink-grid vertical-space">
+  {{#each}}
+  <div {{bind-attr class=":event isRepeatedAction type"}}>
+    <div class="column-group">
+      <div class="heading all-90 small-80">
+        <span class="actor">
+          {{render "user" actor}}
+        </span>
+        <span class="verb">{{verb}}</span>
+        {{#if payload.member}}
+        <span class="member">
+          {{render "user" payload.member}}
+        </span>
+          to
+        {{/if}}
+        <span>
+          <a {{bind-attr href="repoUrl"}}>{{highlight-repo repo.name}}</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="meta">
+      <time {{bind-attr datetime="created_at"}}>{{relative-date created_at}}</time>
+    </div>
+
+    <div class="body">
+      {{#if payload.commits}}
+        <div class="commits summary">
+        {{#each commit in payload.commits}}
+          {{render "commit" commit}}
+        {{/each}}
+        </div>
+      {{/if}}
+      {{#if payload.forkee}}
+        <div class="description summary">
+          {{payload.forkee.description}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+  {{/each}}
+</div>
