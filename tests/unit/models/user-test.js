@@ -3,8 +3,8 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('activity', 'Activity', {
-  needs: ['model:user', 'model:repo']
+moduleForModel('user', 'User', {
+  needs: ['model:repo']
 });
 
 test('it exists', function() {
