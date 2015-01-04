@@ -1,5 +1,3 @@
-import DS from 'ember-data';
+import User from './user';
 
-export default DS.Model.extend({
-  
-});
+export default User.extend();

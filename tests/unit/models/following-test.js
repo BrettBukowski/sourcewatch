@@ -4,8 +4,7 @@ import {
 } from 'ember-qunit';
 
 moduleForModel('following', 'Following', {
-  // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:user', 'model:repo']
 });
 
 test('it exists', function() {
