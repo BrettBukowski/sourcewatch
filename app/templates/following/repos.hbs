@@ -3,8 +3,8 @@
 
   {{#each}}
   <div class="repo">
-    <img {{bind-attr src="owner.avatar_url"}} height="48" width="48" alt="" />
-    <a {{bind-attr href="html_url"}}>{{highlight-repo full_name}}</a>
+    <img {{bind-attr src="owner.avatarUrl"}} height="48" width="48" alt="" />
+    <a {{bind-attr href="htmlUrl"}}>{{highlight-repo fullName}}</a>
 
     <div class="summary">
       {{emoji-message description}}
